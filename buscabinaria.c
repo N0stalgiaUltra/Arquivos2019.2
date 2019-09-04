@@ -28,7 +28,7 @@ int main(int argc, char**argv)
         return 1;
     }
     
-    f = fopen("cep.dat","r");
+    f = fopen("cep_ordenado.dat","r");
     fseek(f,0,SEEK_END);    //vai até o final do arquivo
     posicao = ftell(f);     //retorna a posicao e coloca na variavel
     rewind(f);              //volta para a posicao inicial
@@ -47,7 +47,7 @@ int main(int argc, char**argv)
         //caso 1: achou
         if(strncmp(argv[1], e.cep,8) == 0) //compara, caso os argumentos sejam iguais
         {
-            //printf("Endereco encontrado!");
+            printf("Endereco encontrado!\n");
             printf("%.72s\n%.72s\n%.72s\n%.72s\n%.2s\n%.8s\n",e.logradouro,e.bairro,e.cidade,e.uf,e.sigla,e.cep);
             
             break;
@@ -63,7 +63,7 @@ int main(int argc, char**argv)
                 ultimo = meio-1;
             }     
     }
-   //printf(i);
+   printf("%d\n",i);
 
     fclose(f);
     return 0;
